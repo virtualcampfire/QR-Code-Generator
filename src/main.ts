@@ -9,5 +9,8 @@ function animate(){
     canvas.drawCanvasTiles('black')
     canvas.drawMap(map.updateMapRandom(), 'white')
 }
-setInterval(animate, 5000)
+
+const changeQR = document.getElementById("changeQR")
+
+
 
