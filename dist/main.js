@@ -7,6 +7,11 @@ function animate() {
     canvas.drawCanvasTiles('black');
     canvas.drawMap(map.updateMapRandom(), 'white');
 }
-function changeQRCode() {
-    animate();
+const changeQR = document.getElementById('changeQR');
+const QRRawValue = document.getElementById('QRRawValue');
+if (changeQR && QRRawValue) {
+    changeQR.addEventListener('click', () => {
+        animate();
+        QRRawValue.value = map.getMap().toString().replace(/,/g, '.');
+    });
 }
