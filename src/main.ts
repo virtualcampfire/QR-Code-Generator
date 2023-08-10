@@ -10,7 +10,11 @@ function animate(){
     canvas.drawMap(map.updateMapRandom(), 'white')
 }
 
-const changeQR = document.getElementById("changeQR")
-
-
-
+const changeQR = document.getElementById('changeQR')
+const QRRawValue = document.getElementById('QRRawValue') as HTMLInputElement
+if (changeQR && QRRawValue) {
+  changeQR.addEventListener('click', () => {
+    animate()
+    QRRawValue.value = map.getMap().toString().replace(/,/g, '.')
+  })
+}   
